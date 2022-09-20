@@ -1,11 +1,15 @@
+package bankAccountTests.basic;
+
+import bankAccount.BankAccount;
 import exception.WithdrawException;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Test BankAccount class")
+@DisplayName("Test bankAccount.BankAccount class")
 public class BankAccountNestedTest {
 
 
@@ -14,7 +18,7 @@ public class BankAccountNestedTest {
     public void testWithdrawNotStuckAtZero() throws WithdrawException {
         BankAccount bankAccount = new BankAccount(500, -1000);
         bankAccount.withdraw(800);
-        assertNotEquals(0, bankAccount.getBalance());
+        Assertions.assertNotEquals(0, bankAccount.getBalance());
     }
 
     @Test
@@ -22,7 +26,7 @@ public class BankAccountNestedTest {
     public void testDeposit(){
         BankAccount bankAccount = new BankAccount(400, 0);
         bankAccount.deposit(500);
-        assertEquals(900, bankAccount.getBalance());
+        Assertions.assertEquals(900, bankAccount.getBalance());
     }
 
 
@@ -41,7 +45,7 @@ public class BankAccountNestedTest {
         public void testWithdrawMinimumBalanceNegative1000() throws WithdrawException {
             BankAccount bankAccount = new BankAccount(0, -1000);
             bankAccount.withdraw(500);
-            assertEquals(-500, bankAccount.getBalance());
+            Assertions.assertEquals(-500, bankAccount.getBalance());
         }
     }
 }

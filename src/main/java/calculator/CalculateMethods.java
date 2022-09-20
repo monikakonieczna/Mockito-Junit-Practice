@@ -1,3 +1,5 @@
+package calculator;
+
 public class CalculateMethods {
 
     public double divide(int x, int y){

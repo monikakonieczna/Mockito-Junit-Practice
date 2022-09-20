@@ -1,9 +1,21 @@
+package bankAccount;
+
 import exception.WithdrawException;
 
 public class BankAccount {
 
     private double balance;
     private double minimumBalance;
+
+    public String getHolderName() {
+        return holderName;
+    }
+
+    private String holderName;
+
+    public void setHolderName(String holderName) {
+        this.holderName = holderName;
+    }
 
     public BankAccount(double balance, double minimumBalance) {
         this.balance = balance;

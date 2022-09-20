@@ -1,8 +1,8 @@
+package bankAccountTests.basic;
+
+import bankAccount.BankAccount;
 import exception.WithdrawException;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,7 +15,7 @@ public class BankAccountOrderedExecutionTest {
     @Order(2)
     public void testWithdraw() throws WithdrawException {
         bankAccount.withdraw(300);
-        assertEquals(200, bankAccount.getBalance());
+        Assertions.assertEquals(200, bankAccount.getBalance());
 
     }
 
@@ -23,6 +23,6 @@ public class BankAccountOrderedExecutionTest {
     @Order(1)
     public void testDeposit(){
         bankAccount.deposit(500);
-        assertEquals(500, bankAccount.getBalance());
+        Assertions.assertEquals(500, bankAccount.getBalance());
     }
 }

@@ -1,3 +1,7 @@
+package calculatorTests;
+
+import calculator.CalculateMethods;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,7 +23,7 @@ public class CalculateMethodsMockitoTest {
 
     @Test
     public void testDivide(){
-        assertEquals(2.0, calculateMethods.divide(6,3));
+        Assertions.assertEquals(2.0, calculateMethods.divide(6,3));
 
     }
 }

@@ -16,7 +16,7 @@ public class BankAccountTest {
     public void testWithdraw() throws WithdrawException {
         BankAccount bankAccount = new BankAccount(500, -1000);
         bankAccount.withdraw(300);
-        Assertions.assertEquals(200, bankAccount.getBalance());
+        Assertions.assertEquals(200, bankAccount.getBalance(), "Unexpected value, expected 200");
     }
 
     @Test
